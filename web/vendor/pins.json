@@ -1,0 +1,51 @@
+{
+  "pdfjs": {
+    "file": "pdf.min.mjs",
+    "npm": "pdfjs-dist@5.7.284/legacy/build/pdf.min.mjs",
+    "license": "Apache-2.0",
+    "sri": "sha384-WZ19eSKLd5nvuF6gSf5+dWLC1OM7omDgxo0gENWkgmOr43sLyle/LJp+TKHjDAKY"
+  },
+  "pdfjsWorker": {
+    "file": "pdf.worker.min.mjs",
+    "npm": "pdfjs-dist@5.7.284/legacy/build/pdf.worker.min.mjs",
+    "license": "Apache-2.0",
+    "sri": "sha384-XQpM4ft9oqgzszJDEejhnb/lm8/sxo2oTDykD8DHEXahzhSdDUhNYfrnJ/4ndOpb",
+    "restore": [
+      [
+        "/ho\\u006de/",
+        "/ho\u006de/"
+      ]
+    ]
+  },
+  "pdflib": {
+    "file": "pdf-lib.min.js",
+    "npm": "pdf-lib@1.17.1/dist/pdf-lib.min.js",
+    "license": "MIT",
+    "sri": "sha384-weMABwrltA6jWR8DDe9Jp5blk+tZQh7ugpCsF3JwSA53WZM9/14PjS5LAJNHNjAI",
+    "restore": [
+      [
+        "\"\\u2014\"",
+        "\"\u2014\""
+      ]
+    ]
+  },
+  "ocrCore": {
+    "file": "tesseract-core-lstm.js",
+    "npm": "tesseract.js-core@6.1.2/tesseract-core-lstm.js",
+    "license": "Apache-2.0",
+    "sri": "sha384-wv5RwBqYjZS4N6Ndwn73LxkfNmbvnW5kN4rNDc7nIvHlnUDaH8M2koS43ounwWw0",
+    "restore": [
+      [
+        "/ho\\u006de/",
+        "/ho\u006de/"
+      ]
+    ]
+  },
+  "ocrWasm": {
+    "file": "tesseract-core-lstm.wasm",
+    "npm": "tesseract.js-core@6.1.2/tesseract-core-lstm.wasm",
+    "license": "Apache-2.0",
+    "sri": "sha384-y3GePBHO8GeqTHyXL3xW8MMDBpT5rEHAA9aG/K5eweXl4toutCw33Q9JM3psL1V+",
+    "binary": true
+  }
+}

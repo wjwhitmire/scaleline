@@ -1,0 +1,77 @@
+EXAMPLE DATA - INVENTED PROJECT MANUAL FOR TRYING THE TAKEOFF TOOL
+EXAMPLE RESIDENCE, 100 EXAMPLE WAY (INVENTED). NOT A REAL PROJECT. NOT FOR CONSTRUCTION.
+
+TABLE OF CONTENTS
+01 10 00 SUMMARY
+03 30 00 CAST-IN-PLACE CONCRETE
+06 10 00 ROUGH CARPENTRY
+07 31 13 ASPHALT SHINGLES
+08 14 16 FLUSH WOOD DOORS
+08 71 00 DOOR HARDWARE
+09 29 00 GYPSUM BOARD
+09 65 19 RESILIENT TILE FLOORING
+09 91 23 INTERIOR PAINTING
+26 27 26 WIRING DEVICES
+32 13 13 CONCRETE PAVING
+
+SECTION 01 10 00 - SUMMARY
+PART 1 - GENERAL
+1.1 The work is a single-story house of about 1,200 square feet, as shown on the drawings.
+1.2 The owner furnishes appliances. The contractor installs them.
+END OF SECTION 01 10 00
+
+SECTION 03 30 00 - CAST-IN-PLACE CONCRETE
+PART 1 - GENERAL
+1.1 Slab on grade, 4 inches thick, over a 10 mil vapor retarder, with welded wire reinforcement.
+PART 2 - PRODUCTS
+2.1 Concrete: 3000 psi at 28 days.
+PART 3 - EXECUTION
+3.1 Finish the slab with a steel trowel. Cure for 7 days.
+END OF SECTION 03 30 00
+
+SECTION 06 10 00 - ROUGH CARPENTRY
+PART 1 - GENERAL
+1.1 Exterior walls: 2x6 studs at 16 inches on center with 7/16 inch sheathing.
+PART 2 - PRODUCTS
+2.1 Lumber: No. 2 or better, kiln dried.
+END OF SECTION 06 10 00
+
+SECTION 07 31 13 - ASPHALT SHINGLES
+PART 1 - GENERAL
+1.1 Laminated asphalt shingles over synthetic underlayment, with drip edge at eaves and rakes.
+END OF SECTION 07 31 13
+
+SECTION 08 14 16 - FLUSH WOOD DOORS
+PART 1 - GENERAL
+1.1 Interior doors: 1-3/8 inch hollow core, prehung, 3'-0" x 6'-8" unless noted.
+END OF SECTION 08 14 16
+
+SECTION 08 71 00 - DOOR HARDWARE
+PART 1 - GENERAL
+1.1 Lever sets: passage at halls, privacy at baths and bedrooms.
+END OF SECTION 08 71 00
+
+SECTION 09 29 00 - GYPSUM BOARD
+PART 1 - GENERAL
+1.1 5/8 inch gypsum board on both sides of interior partitions, taped and finished, level 4.
+END OF SECTION 09 29 00
+
+SECTION 09 65 19 - RESILIENT TILE FLOORING
+PART 1 - GENERAL
+1.1 Luxury vinyl plank in living, kitchen, hall and bedrooms, with 4 inch rubber base.
+END OF SECTION 09 65 19
+
+SECTION 09 91 23 - INTERIOR PAINTING
+PART 1 - GENERAL
+1.1 Walls: one coat of primer and two finish coats, eggshell.
+END OF SECTION 09 91 23
+
+SECTION 26 27 26 - WIRING DEVICES
+PART 1 - GENERAL
+1.1 Duplex receptacles, 20 amp, tamper resistant, white, with white plates.
+END OF SECTION 26 27 26
+
+SECTION 32 13 13 - CONCRETE PAVING
+PART 1 - GENERAL
+1.1 Sidewalk: 4 inch concrete, broom finish, control joints at 5 feet.
+END OF SECTION 32 13 13

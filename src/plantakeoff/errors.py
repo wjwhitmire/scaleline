@@ -1,0 +1,8 @@
+"""One error type with a short machine code and a human message."""
+
+
+class TakeoffError(ValueError):
+    def __init__(self, code: str, message: str):
+        super().__init__(message)
+        self.code = code
+        self.message = message

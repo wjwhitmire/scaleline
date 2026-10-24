@@ -1,0 +1,26 @@
+{
+  "name": "takeoff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plan takeoff and markup that runs entirely in the browser.",
+  "license": "MIT",
+  "author": "Will Whitmire",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/js/*.test.mjs",
+    "parity": "node web/parity.test.mjs",
+    "build": "python3 web/build_pages.py"
+  },
+  "devDependencies": {
+    "@fontsource-variable/encode-sans": "5.3.0",
+    "@fontsource-variable/ubuntu-sans-mono": "5.3.0",
+    "@tesseract.js-data/eng": "1.0.0",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "5.7.284",
+    "pdfjs-dist-3": "npm:pdfjs-dist@3.11.174",
+    "tesseract.js-core": "6.1.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,116 @@
+<div class="app" id="app">
+  <header class="menubar" id="menubar">
+    <button class="iconbtn only-touch" id="btn-menu" type="button" aria-label="Menu" aria-haspopup="menu" aria-expanded="false" title="Menu">{{icon:menu}}</button>
+    <button class="iconbtn only-desk" id="btn-left-panel" type="button" aria-label="Show or hide the left panel" aria-pressed="true" title="Left panel">{{icon:panel-left}}</button>
+    <div class="brand">
+      <svg class="mark-svg" viewBox="40 110 432 272" role="img" aria-label="{{NAME}}"><g><rect x="96" y="306" width="320" height="62" fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="round"/><rect x="96" y="306" width="80" height="62" fill="currentColor"/><rect x="256" y="306" width="80" height="62" fill="currentColor"/><path d="M96 128V272M416 128V272M96 202H416" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M58 240L134 164M378 240L454 164" fill="none" stroke="var(--mark)" stroke-width="30" stroke-linecap="round"/></g></svg>
+      <span class="wm"><span class="eyebrow">Field Tools No. 16</span><span class="name" id="brand-name">{{NAME}}</span></span>
+    </div>
+    <nav class="menus" id="menus" aria-label="Main menu"></nav>
+    <span class="doc-name" id="doc-name"></span>
+    <button class="iconbtn only-touch" id="btn-touch-undo" type="button" aria-label="Undo (Ctrl+Z)" title="Undo (Ctrl+Z)">{{icon:undo}}</button>
+    <button class="iconbtn only-phone" id="btn-phone-more" type="button" aria-label="More" aria-haspopup="menu" title="More">{{icon:more}}</button>
+    <button class="iconbtn only-desk" id="btn-right-panel" type="button" aria-label="Show or hide the right panel" aria-pressed="true" title="Right panel">{{icon:panel-right}}</button>
+  </header>
+  <div class="toolbar-wrap" id="toolbar-wrap">
+    <div class="toolbar" id="toolbar" role="toolbar" aria-label="Tools"></div>
+    <div class="scaleline" aria-hidden="true"></div>
+  </div>
+  <div class="work" id="work">
+    <nav class="rail l" id="rail-left" aria-label="Left panels">
+      <button class="iconbtn" id="rail-pages" type="button" aria-label="Pages" aria-expanded="false" title="Pages">{{icon:pages}}</button>
+      <button class="iconbtn" id="rail-sheets" type="button" aria-label="Sheets" aria-expanded="false" title="Sheets">{{icon:sheets}}</button>
+      <button class="iconbtn" id="rail-search" type="button" aria-label="Search" aria-expanded="false" title="Search (Ctrl+F)">{{icon:search}}</button>
+    </nav>
+    <aside class="side left" id="left-panel" aria-label="Pages, sheets and search">
+      <div class="tabs" role="tablist" id="left-tabs">
+        <button type="button" role="tab" id="tab-pages" aria-controls="pane-pages" aria-selected="true" title="Pages">{{icon:pages}}<span class="t">Pages</span></button>
+        <button type="button" role="tab" id="tab-sheets" aria-controls="pane-sheets" aria-selected="false" title="Sheets">{{icon:sheets}}<span class="t">Sheets</span></button>
+        <button type="button" role="tab" id="tab-search" aria-controls="pane-search" aria-selected="false" title="Search (Ctrl+F)">{{icon:search}}<span class="t">Search</span></button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="pane-pages" aria-labelledby="tab-pages"><div class="thumbs" id="thumbs"></div></div>
+      <div class="tabpanel" role="tabpanel" id="pane-sheets" aria-labelledby="tab-sheets" hidden></div>
+      <div class="tabpanel" role="tabpanel" id="pane-search" aria-labelledby="tab-search" hidden>
+        <form id="search-form" class="row" autocomplete="off">
+          <label class="sr-only" for="search-text">Find text in the PDF</label>
+          <input type="search" class="inp" id="search-text" placeholder="Find text in all pages" style="flex:1">
+          <button class="btn small" id="search-go" type="submit">Find</button>
+        </form>
+        <p class="help" id="search-status"></p>
+        <ul class="list" id="search-results"></ul>
+      </div>
+    </aside>
+    <main class="viewer" id="viewer" aria-label="Sheet view" tabindex="0">
+      <div class="page-shadow" id="page-shadow"></div>
+      <canvas id="base-canvas" aria-hidden="true"></canvas>
+      <canvas id="compare-canvas" aria-hidden="true" hidden></canvas>
+      <svg class="overlay" id="overlay" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Markups on this page"><defs id="ov-defs"></defs><g id="ov-root"></g><g id="ov-screen"></g></svg>
+      <div class="cmp-side" id="cmp-side" hidden><canvas id="cmp-side-canvas" aria-hidden="true"></canvas><span class="cmp-tag cap">Revision</span></div>
+      <div class="busy" id="busy" hidden></div>
+    </main>
+    <aside class="side right" id="right-panel" aria-label="Properties, tool chest, layers and measurements">
+      <div class="tabs" role="tablist" id="right-tabs">
+        <button type="button" role="tab" id="tab-props" aria-controls="pane-props" aria-selected="true" title="Properties">{{icon:settings}}<span class="t">Properties</span></button>
+        <button type="button" role="tab" id="tab-chest" aria-controls="pane-chest" aria-selected="false" title="Tool chest (Alt+X)">{{icon:chest}}<span class="t">Tool chest</span></button>
+        <button type="button" role="tab" id="tab-layers" aria-controls="pane-layers" aria-selected="false" title="Layers (Alt+Y)">{{icon:layers}}<span class="t">Layers</span></button>
+        <button type="button" role="tab" id="tab-measure" aria-controls="pane-measure" aria-selected="false" title="Measurements">{{icon:measurements}}<span class="t">Measurements</span></button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="pane-props" aria-labelledby="tab-props"></div>
+      <div class="tabpanel" role="tabpanel" id="pane-chest" aria-labelledby="tab-chest" hidden></div>
+      <div class="tabpanel" role="tabpanel" id="pane-layers" aria-labelledby="tab-layers" hidden></div>
+      <div class="tabpanel" role="tabpanel" id="pane-measure" aria-labelledby="tab-measure" hidden></div>
+    </aside>
+    <nav class="rail r" id="rail-right" aria-label="Right panels">
+      <button class="iconbtn" id="rail-props" type="button" aria-label="Properties" aria-expanded="false" title="Properties">{{icon:settings}}</button>
+      <button class="iconbtn" id="rail-chest" type="button" aria-label="Tool chest" aria-expanded="false" title="Tool chest (Alt+X)">{{icon:chest}}</button>
+      <button class="iconbtn" id="rail-layers" type="button" aria-label="Layers" aria-expanded="false" title="Layers (Alt+Y)">{{icon:layers}}</button>
+      <button class="iconbtn" id="rail-measure" type="button" aria-label="Measurements" aria-expanded="false" title="Measurements">{{icon:measurements}}</button>
+      <span class="grow"></span>
+      <button class="iconbtn" id="rail-list" type="button" aria-label="Markups list" aria-expanded="false" title="Markups list (Alt+L)">{{icon:markups-list}}</button>
+    </nav>
+  </div>
+  <div class="sheetbar" id="sheetbar" aria-label="Selected measurement"></div>
+  <nav class="tray" id="tray" aria-label="Tools"></nav>
+  <section class="bottom" id="bottom" aria-label="Markups list and estimate">
+    <div class="resize-v" id="bottom-resize" role="separator" aria-orientation="horizontal" aria-label="Resize the markups list" tabindex="0"></div>
+    <div class="tabs" role="tablist" id="bottom-tabs">
+      <button type="button" role="tab" id="tab-list" aria-controls="pane-list" aria-selected="true" title="Markups list (Alt+L)">{{icon:markups-list}}<span class="t">Markups list</span><span class="count" id="tab-list-count"></span></button>
+      <button type="button" role="tab" id="tab-estimate" aria-controls="pane-estimate" aria-selected="false" title="Estimate">{{icon:estimate}}<span class="t">Estimate</span><span class="count" id="tab-estimate-total"></span></button>
+      <span class="spacer"></span>
+      <button type="button" class="iconbtn" id="btn-bottom-collapse" aria-label="Collapse or expand the markups list" title="Collapse">{{icon:chevron-down}}</button>
+    </div>
+    <div class="tabpanel flush cols" role="tabpanel" id="pane-list" aria-labelledby="tab-list"></div>
+    <div class="tabpanel flush cols" role="tabpanel" id="pane-estimate" aria-labelledby="tab-estimate" hidden></div>
+  </section>
+  <footer class="statusbar" id="statusbar">
+    <span class="grp">
+      <button class="iconbtn" id="nav-first" type="button" aria-label="First page" title="First page (Home)">{{icon:first}}</button>
+      <button class="iconbtn" id="nav-prev" type="button" aria-label="Previous page" title="Previous page (Ctrl+Left)">{{icon:prev}}</button>
+      <label class="sr-only" for="nav-page">Page number</label>
+      <input type="text" id="nav-page" inputmode="numeric" value="1"><span id="nav-count" class="tnum">/ 1</span>
+      <button class="iconbtn" id="nav-next" type="button" aria-label="Next page" title="Next page (Ctrl+Right)">{{icon:next}}</button>
+      <button class="iconbtn" id="nav-last" type="button" aria-label="Last page" title="Last page (End)">{{icon:last}}</button>
+    </span>
+    <button class="sb" id="zoom-label" type="button" title="Fit page (Ctrl+9)" aria-label="Zoom level, click to fit the page">100%</button>
+    <button class="sb" id="sb-snap-content" type="button" aria-pressed="true" aria-label="Snap to content" title="Snap to content (Ctrl+Shift+F8)">{{icon:snap}}<span class="only-desk">Content</span></button>
+    <button class="sb" id="sb-snap-markup" type="button" aria-pressed="true" aria-label="Snap to markups" title="Snap to markups (Ctrl+Shift+F7)">{{icon:snap}}<span class="only-desk">Markups</span></button>
+    <button class="sb" id="sb-grid" type="button" aria-pressed="false" aria-label="Snap to grid" title="Snap to grid (Ctrl+Shift+F9)">{{icon:grid}}<span class="only-desk">Grid</span></button>
+    <button class="sb" id="sb-ortho" type="button" aria-pressed="false" aria-label="Ortho" title="Lock to 0, 45 and 90 degrees (hold Shift for one segment)">{{icon:ortho}}<span class="only-desk">Ortho</span></button>
+    <button class="sb scale none" id="sb-scale" type="button" title="Page scale: open Measurements">No scale: calibrate</button>
+    <span class="sb src only-desk" id="sb-scale-src"></span>
+    <span id="sb-suggest"></span>
+    <span id="sb-sync" hidden></span>
+    <span id="sb-live" hidden></span>
+    <span class="grow"></span>
+    <span id="sb-message" role="status" aria-live="polite"></span>
+    <span class="footer-note" id="footer-note">Built by Will Whitmire. Runs entirely in your browser; nothing you enter is uploaded.</span>
+  </footer>
+  <input type="file" id="file-pdf" accept="application/pdf,.pdf" hidden aria-label="Open a PDF">
+  <input type="file" id="file-markups" accept="application/json,.json" hidden aria-label="Open a markup file">
+  <input type="file" id="file-compare" accept="application/pdf,.pdf" hidden aria-label="Open a revision to compare">
+  <input type="file" id="file-chest" accept="application/json,.json,.btx,.xml" hidden aria-label="Import a tool chest">
+  <input type="file" id="file-merge" accept="application/json,.json" hidden aria-label="Merge a teammate's markup file">
+  <input type="file" id="file-prices" accept="text/csv,.csv,.txt,.tsv" hidden aria-label="Import a price list">
+  <input type="file" id="file-assemblies" accept="application/json,.json" hidden aria-label="Add assemblies from a file">
+  <input type="file" id="file-summary" accept="text/csv,.csv,.xml,.txt" hidden aria-label="Import a markup summary">
+</div>
